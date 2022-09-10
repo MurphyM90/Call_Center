@@ -48,7 +48,8 @@ int main()
 int main(int argc, char *argv[])
 {
     int dia_aux, anio_aux, mes_aux;
-    Fecha diaA(20,4,2006), diaB(1,1,0);
+    //Fecha diaA(20,4,2006), diaB(1,1,0);
+    Fecha diaA(27,4,2022), diaB(1,1,0);
 
     cout<< "dia: " << diaA.damedia()<< endl;
     cout<< "mes: " << diaA.damemes()<< endl;
