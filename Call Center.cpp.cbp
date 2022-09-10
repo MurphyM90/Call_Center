@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Call Center.cpp" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Call Center.cpp" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Call Center.cpp" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="Callcenter.hpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Lista_Dinamica.hpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Menu_Agente.hpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="agente.hpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="agente_menu.hpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="area.hpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="cliente.hpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="fecha.hpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="horario.hpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="horas.hpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="main.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

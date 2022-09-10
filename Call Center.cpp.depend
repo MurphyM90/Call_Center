@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1662347415 source:c:\users\diego\onedrive\documentos\programacion en c++\defincion de clases.cpp\call center.cpp\main.cpp
+	<iostream>
+	<string>
+	"nombre.hpp"
+	"fecha.hpp"
+
+1662349976 c:\users\diego\onedrive\documentos\programacion en c++\defincion de clases.cpp\call center.cpp\nombre.hpp
+	<iostream>
+	<string>
+
+1662330159 c:\users\diego\onedrive\documentos\programacion en c++\defincion de clases.cpp\call center.cpp\horas.hpp
+	<iostream>
+	<string>
+
+1662350153 c:\users\diego\onedrive\documentos\programacion en c++\defincion de clases.cpp\call center.cpp\fecha.hpp
+	<cstdlib>
+	<iostream>
+
