@@ -36,7 +36,7 @@ class Fecha {
         void guardarfecha(int, int, int);
         void scanfecha();
 
-        // declaración de funcioón externa amiga:
+        // declaraciï¿½n de funcioï¿½n externa amiga:
         friend int dif_dias (Fecha A, Fecha B);
 
         // Metodos de Hora
@@ -133,16 +133,16 @@ void Fecha::imprimeEstandar()
 
 
 
-//Definición de la función amiga (diferencia en dias):
+//Definiciï¿½n de la funciï¿½n amiga (diferencia en dias):
 int dif_dias (Fecha A, Fecha B){
     int d,m,a, dif=0;
 
-    // Si estan al reves suspendemos el cálculo:
+    // Si estan al reves suspendemos el cï¿½lculo:
     if(A.anio > B.anio) return -1;
     else if(A.anio == B.anio && A.mes > B.mes) return -1;
     else if(A.anio == B.anio && A.mes == B.mes && A.dia > B.dia) return -1;
 
-    // Si son fechas del mismo año:
+    // Si son fechas del mismo aï¿½o:
     if(A.anio == B.anio) {
         if(A.mes == B.mes) return B.dia-A.dia;
         // Dias por meses completos:
@@ -176,10 +176,10 @@ int dif_dias (Fecha A, Fecha B){
 
         return dif;
     }
-    // Si son dias de años distintos:
-    // Años completos de diferencia:
+    // Si son dias de aï¿½os distintos:
+    // Aï¿½os completos de diferencia:
     else dif = (B.anio - (A.anio+1)) * 365;
-    // Ahora los meses hasta fin del año de A:
+    // Ahora los meses hasta fin del aï¿½o de A:
     for(a=A.mes+1; a<=12  ; a++)
     {
         switch(a) {
@@ -194,7 +194,7 @@ int dif_dias (Fecha A, Fecha B){
         }
     }
 
-    // Y los meses desde ppio del año de B:
+    // Y los meses desde ppio del aï¿½o de B:
     for(a=1; a<B.mes  ; a++)
     {
         switch(a) {

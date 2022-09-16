@@ -4,10 +4,19 @@
 */
 using namespace std;
 
-
 #include "nombre.hpp"
-
 #include "fecha.hpp"
+
+//#include "cliente.hpp"
+
+
+int main(){
+    //Cliente c1();
+    Nombre n1("Diego", "Ramos");
+    cout << n1 << endl;
+    system("pause");
+    return 0;
+}
 
 
 /*
@@ -44,7 +53,7 @@ int main()
    cout << endl;
    return 0;
 } // fin de la funcion main
-*/
+
 int main(int argc, char *argv[])
 {
     int dia_aux, anio_aux, mes_aux;
@@ -104,4 +113,4 @@ int main(int argc, char *argv[])
     return EXIT_SUCCESS;
 
 }
-
+*/

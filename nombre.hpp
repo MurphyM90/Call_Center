@@ -4,7 +4,7 @@
 #include<iostream>
 #include<string>
 
-using namespace std;
+//using namespace std;
 
 class Nombre{
     private: //atributos
@@ -34,6 +34,17 @@ class Nombre{
         friend istream& operator>>(istream& is, const Nombre& _nombre);
 
 };
+
+ostream& operator<<(ostream& os, const Nombre& _nombre){
+    os << "Nombre: " << _nombre.nombre << std::endl;
+    os << "Apellido: " << _nombre.apellido << std::endl;
+    return os;
+}
+
+string Nombre::toString(){
+    cout << "Nombre: " << nombre << std::endl;
+    cout << "Apellido: " << apellido << std::endl;
+}
 
 Nombre::Nombre(){//Este se utiliza para no guardar basura en el buffer
     nombre = "";
