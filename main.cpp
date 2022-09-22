@@ -1,19 +1,38 @@
-/*
+
+
 #include<iostream>
 #include<string>
-*/
+
+
+
 using namespace std;
 
 #include "nombre.hpp"
 #include "fecha.hpp"
+#include "cliente.hpp"
 
-//#include "cliente.hpp"
-
+#include "ListaDoblementeLigada.cpp"
 
 int main(){
     //Cliente c1();
     Nombre n1("Diego", "Ramos");
-    cout << n1 << endl;
+    cout << n1 << endl << endl;
+    Cliente c1(n1, 01.50, 123456789, "Esto es una diminuta prueba");
+    cout << c1 << endl << endl;
+    ListaDoblementeLigada<Cliente> listaCliente;
+    listaCliente.insertar(c1);
+    int tamanio = listaCliente.obtenerTamanio();
+    cout << "El tamanio es: " << tamanio << endl;
+    int posicion = listaCliente.posicionActual();
+    cout << "La posicion es: " << posicion << endl;
+    Cliente cAux = listaCliente.obtenerElemento();
+    cout << "El cliente auxiliar es el siguiente:" << endl << endl;
+    cout << cAux << endl << endl;
+    if(listaCliente.isEmpty() == true)
+        cout << "La lista esta vacia" << endl << endl;
+    else{
+        cout << "La lista NO esta vacia" << endl << endl;
+    }
     system("pause");
     return 0;
 }

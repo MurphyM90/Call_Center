@@ -124,3 +124,10 @@ template <typename E> const E & ListaDoblementeLigada<E> :: obtenerElemento(void
 	return actual->elemento;
 }
 
+
+template <typename E> bool ListaDoblementeLigada<E> :: isEmpty(void)
+{
+	if(tamanio == 0)
+		return true;
+	return false;
+}

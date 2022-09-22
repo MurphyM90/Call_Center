@@ -55,6 +55,16 @@ template <typename E> class ListaDoblementeLigada: public Lista<E>
 		int posicionActual(void) const;
 		void irAPosicion(int);
 		const E &obtenerElemento(void) const;
+
+		virtual bool isEmpty(void);
+		/*
+		
+		virtual void toString(void);
+		virtual void insertOrder(const E &) const;
+		virtual const E &search(const E &) const;
+		virtual void searchAllCoindicences(const E &) const;
+		virtual void modificarElemento(const E &) const;
+		*/
 };
 
 #endif

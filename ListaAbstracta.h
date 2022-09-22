@@ -20,6 +20,16 @@ public:
 	virtual int posicionActual(void) const=0;
 	virtual void irAPosicion(int pos)=0;
 	virtual const E &obtenerElemento(void) const=0;
+
+	virtual bool isEmpty(void) = 0;
+	/*
+	
+	virtual void toString(void) = 0;
+	virtual void insertOrder(const E &) const = 0;
+	virtual const E &search(const E &) const = 0;
+	virtual void searchAllCoindicences(const E &) const = 0;
+	virtual void modificarElemento(const E &) const = 0;
+	*/
 };
 
 #endif

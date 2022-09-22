@@ -1,6 +1,8 @@
 #ifndef CLIENTE_HPP_INCLUDED
 #define CLIENTE_HPP_INCLUDED
 
+#include<string>
+
 #include "nombre.hpp"
 
 class Cliente{
@@ -22,7 +24,12 @@ class Cliente{
         string getmotivo();
         string toString();
 
-        Cliente& operator = (const Cliente&);
+        Cliente& operator = (const Cliente& _cliente){
+            nombre = _cliente.nombre;
+            dLL = _cliente.dLL;         //duracion llamada
+            cC = _cliente.cC;           //Codigo de cliente
+            motivo = _cliente.motivo;
+        }
 
         bool operator == (const Cliente&) const; //== de comparacion
         bool operator != (const Cliente&) const;
@@ -34,6 +41,14 @@ class Cliente{
         friend ostream& operator<<(ostream& os, const Cliente& _cliente);
         friend istream& operator>>(istream& is, const Cliente& _cliente);
 };
+
+ostream& operator<<(ostream& os, const Cliente& _cliente){
+    os << _cliente.nombre;
+    os << "Duracion de llamada: " << _cliente.dLL << std::endl;
+    os << "Codigo de cliente: " << _cliente.cC << std::endl;
+    os << "Motivo: " << _cliente.motivo << std::endl;
+    return os;
+}
 
 Cliente::Cliente(){
     nombre.setNombre("");
