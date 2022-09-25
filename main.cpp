@@ -28,8 +28,9 @@ int main(){
     cout << "Agregar a las listas" << endl << endl;
 
     ListaDoblementeLigada<Cliente> listaCliente;
-    listaCliente.insertar(c1);
-    listaCliente.insertar(c2);
+    listaCliente.ponAlFinal(c1);
+    listaCliente.ponAlFinal(c2);
+    listaCliente.irAlInicio();
 
     int tamanio = listaCliente.obtenerTamanio();
     cout << "El tamanio es: " << tamanio << endl;

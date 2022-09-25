@@ -1,13 +1,18 @@
 #ifndef CALLCENTER_HPP_INCLUDED
 #define CALLCENTER_HPP_INCLUDED
 
+#include "ListaDoblementeLigada.cpp"
+#include "cliente.hpp"
+#include "agente.hpp"
+
+
 class Callcenter{
     private:
-        ListaLigada listaAgentes;
-        ListaLigada listaClientes;
+        ListaDoblementeLigada<Agente> listaAgentes;
+        ListaDoblementeLigada<Cliente> listaClientes;
     public:
         Callcenter();
-        Callcenter(ListaLigada _listaAgentes, ListaLigada _listaClientes);
+        Callcenter(ListaDoblementeLigada _listaAgentes, ListaDoblementeLigada _listaClientes);
 
 };
 
