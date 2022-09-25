@@ -15,6 +15,7 @@ using namespace std;
 
 int main(){
     //Cliente c1();
+    cout<<"prueba git\n";
     Nombre n1("Diego", "Ramos");
     cout << n1 << endl << endl;
     Cliente c1(n1, 01.50, 123456789, "Esto es una diminuta prueba");
@@ -25,11 +26,17 @@ int main(){
     Cliente c2(n2, 02.70, 987654321, "This is an example");
     cout << c2 << endl << endl;
 
+    Nombre n3("Paul", "GOD");
+    cout << n3 << endl << endl;
+    Cliente c3(n3, 01.50, 123456789, "Esto es una diminuta prueba");
+    cout << c3 << endl << endl;
+
     cout << "Agregar a las listas" << endl << endl;
 
     ListaDoblementeLigada<Cliente> listaCliente;
     listaCliente.insertar(c1);
     listaCliente.insertar(c2);
+    listaCliente.insertar(c3);
 
     int tamanio = listaCliente.obtenerTamanio();
     cout << "El tamanio es: " << tamanio << endl;
