@@ -19,8 +19,18 @@ int main(){
     cout << n1 << endl << endl;
     Cliente c1(n1, 01.50, 123456789, "Esto es una diminuta prueba");
     cout << c1 << endl << endl;
+
+    Nombre n2("Michael", "Edgar");
+    cout << n2 << endl << endl;
+    Cliente c2(n2, 02.70, 987654321, "This is an example");
+    cout << c2 << endl << endl;
+
+    cout << "Agregar a las listas" << endl << endl;
+
     ListaDoblementeLigada<Cliente> listaCliente;
     listaCliente.insertar(c1);
+    listaCliente.insertar(c2);
+
     int tamanio = listaCliente.obtenerTamanio();
     cout << "El tamanio es: " << tamanio << endl;
     int posicion = listaCliente.posicionActual();
@@ -28,6 +38,16 @@ int main(){
     Cliente cAux = listaCliente.obtenerElemento();
     cout << "El cliente auxiliar es el siguiente:" << endl << endl;
     cout << cAux << endl << endl;
+
+    listaCliente.siguiente();
+    posicion = listaCliente.posicionActual();
+    cout << "La posicion es: " << posicion << endl;
+    cAux = listaCliente.obtenerElemento();
+    cout << "El cliente auxiliar 2 es el siguiente:" << endl << endl;
+    cout << cAux << endl << endl;
+    
+
+
     if(listaCliente.isEmpty() == true)
         cout << "La lista esta vacia" << endl << endl;
     else{
