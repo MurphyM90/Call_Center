@@ -36,6 +36,21 @@ int main(){
     Cliente c4(n4, 01.50, 1, "Esto es una diminuta prueba");
     cout << c4 << endl << endl;
 
+    Nombre n5;
+
+    cin >> n5;
+
+    cout << endl << n5 << endl << endl;
+
+    cout << "Prueba de Istream con Cliente" << endl;    
+
+    Cliente c5;
+
+    cin >> c5;
+
+    cout << endl << endl << "Mostrar el cliente creado" << endl << c5;
+
+
     cout << "Usar operadores sobrecargados" << endl << endl;
     if(c1 == c2){
         cout << "Cliente 1 es igual Cliente 2" << endl << endl;

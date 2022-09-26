@@ -35,8 +35,21 @@ class Cliente{
         friend bool operator != (const Cliente& a, const Cliente& b);
 
         friend ostream & operator<<(ostream& os, const Cliente& _cliente);
-        //friend istream & operator>>(istream& is, Cliente& _cliente);
+        friend istream & operator>>(istream& is, Cliente& _cliente);
 };
+
+
+istream& operator>>(istream& is, Cliente& _cliente){
+    is >> _cliente.nombre;
+    cout << "Duracion de llamada: ";
+    is >> _cliente.dLL;
+    cout << "Codigo de cliente: ";
+    is >> _cliente.cC;
+    cout << "Motivo: ";
+    is >> _cliente.motivo;
+    return is;
+}
+
 
 Cliente& Cliente :: operator = (const Cliente& _cliente){
     nombre = _cliente.nombre;
@@ -97,18 +110,7 @@ ostream& operator<<(ostream& os, const Cliente& _cliente){
     return os;
 }
 
-/*
-istream& operator>>(istream& is, Cliente& _cliente){
-    is >> _cliente.nombre;
-    cout << endl << "Duracion de llamada: ";
-    is >> _cliente.dLL;
-    cout << endl << "Codigo de cliente: ";
-    is >> _cliente.cC;
-    cout << endl << "Motivo: ";
-    is >> _cliente.motivo;
-    return is;
-}
-*/
+
 
 Cliente::Cliente(){
     nombre.setNombre("");

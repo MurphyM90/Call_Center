@@ -34,7 +34,8 @@ class Nombre{
         bool operator >= (const Nombre&) const;
 
         friend ostream& operator<<(ostream& os, const Nombre& _nombre);
-        friend istream& operator>>(istream& is, const Nombre& _nombre);
+        friend istream& operator>>(istream& is, Nombre& _nombre);
+        //friend istream & operator>>(istream& is, Cliente& _cliente);
 
 };
 
@@ -49,13 +50,16 @@ ostream& operator << (ostream& os, const Nombre& _nombre){
     return os;
 }
 
-/*
-Nombre::Nombre operator = (const Nombre& _nombre){
-    nombre = _nombre.nombre;
-    apellido = _nombre.apellido;
-    return os;
+
+istream& operator>>(istream& is, Nombre& _nombre){
+    cout << "Nombre: ";
+    is >> _nombre.nombre;
+    cout << "Apellido: ";
+    is >> _nombre.apellido;
+    return is;
 }
-*/
+
+
 string Nombre::toString(){
     cout << "Nombre: " << nombre << std::endl;
     cout << "Apellido: " << apellido << std::endl;
