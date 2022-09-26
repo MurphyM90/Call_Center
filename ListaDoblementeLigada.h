@@ -60,7 +60,7 @@ template <typename E> class ListaDoblementeLigada: public Lista<E>
 		/*
 		
 		virtual void toString(void);
-		virtual void insertOrder(const E &) const;
+		virtual void bubbleSort(const E &) const;
 		virtual const E &search(const E &) const;
 		virtual void searchAllCoindicences(const E &) const;
 		virtual void modificarElemento(const E &) const;
