@@ -24,59 +24,70 @@ class Cliente{
         string getmotivo();
         string toString();
 
-        Cliente& operator = (const Cliente& _cliente){
-            nombre = _cliente.nombre;
-            dLL = _cliente.dLL;         //duracion llamada
-            cC = _cliente.cC;           //Codigo de cliente
-            motivo = _cliente.motivo;
-        }
+        Cliente& operator = (const Cliente& _cliente);
+        friend bool operator < (const Cliente& a, const Cliente& b);
+        friend bool operator > (const Cliente& a, const Cliente& b);
 
-        friend bool operator < (const Cliente& a, const Cliente& b){
-            if(a.cC < b.cC)
-                return true;
-            else
-                return false;
-        }
+        friend bool operator <= (const Cliente& a, const Cliente& b);
+        friend bool operator >= (const Cliente& a, const Cliente& b);
 
-        friend bool operator > (const Cliente& a, const Cliente& b){
-            if(a.cC > b.cC)
-                return true;
-            else
-                return false;
-        }
+        friend bool operator == (const Cliente& a, const Cliente& b);
+        friend bool operator != (const Cliente& a, const Cliente& b);
 
-        friend bool operator <= (const Cliente& a, const Cliente& b){
-            if(a.cC <= b.cC)
-                return true;
-            else
-                return false;
-        }
-
-        friend bool operator >= (const Cliente& a, const Cliente& b){
-            if(a.cC >= b.cC)
-                return true;
-            else
-                return false;
-        }
-
-        friend bool operator == (const Cliente& a, const Cliente& b){
-            if(a.cC == b.cC)
-                return true;
-            else
-                return false;
-        }
-
-        friend bool operator != (const Cliente& a, const Cliente& b){
-            if(a.cC != b.cC)
-                return true;
-            else
-                return false;
-        }
-
-        friend ostream& operator<<(ostream& os, const Cliente& _cliente);
-        friend istream& operator>>(istream& is, const Cliente& _cliente);
+        friend ostream & operator<<(ostream& os, const Cliente& _cliente);
+        //friend istream & operator>>(istream& is, Cliente& _cliente);
 };
 
+Cliente& Cliente :: operator = (const Cliente& _cliente){
+    nombre = _cliente.nombre;
+    dLL = _cliente.dLL;         //duracion llamada
+    cC = _cliente.cC;           //Codigo de cliente
+    motivo = _cliente.motivo;
+}
+
+bool operator < (const Cliente& a, const Cliente& b)
+{
+    if(a.cC < b.cC)
+        return true;
+    else
+        return false;
+}
+
+bool operator > (const Cliente& a, const Cliente& b){
+    if(a.cC > b.cC)
+        return true;
+    else
+        return false;
+}
+
+bool operator <= (const Cliente& a, const Cliente& b){
+    if(a.cC <= b.cC)
+        return true;
+    else
+        return false;
+}
+
+bool operator >= (const Cliente& a, const Cliente& b){
+    if(a.cC >= b.cC)
+        return true;
+    else
+        return false;
+}
+
+
+bool operator == (const Cliente& a, const Cliente& b){
+    if(a.cC == b.cC)
+        return true;
+    else
+        return false;
+}
+
+bool operator != (const Cliente& a, const Cliente& b){
+    if(a.cC != b.cC)
+        return true;
+    else
+        return false;
+}
 
 ostream& operator<<(ostream& os, const Cliente& _cliente){
     os << _cliente.nombre;
@@ -85,6 +96,19 @@ ostream& operator<<(ostream& os, const Cliente& _cliente){
     os << "Motivo: " << _cliente.motivo << std::endl;
     return os;
 }
+
+/*
+istream& operator>>(istream& is, Cliente& _cliente){
+    is >> _cliente.nombre;
+    cout << endl << "Duracion de llamada: ";
+    is >> _cliente.dLL;
+    cout << endl << "Codigo de cliente: ";
+    is >> _cliente.cC;
+    cout << endl << "Motivo: ";
+    is >> _cliente.motivo;
+    return is;
+}
+*/
 
 Cliente::Cliente(){
     nombre.setNombre("");

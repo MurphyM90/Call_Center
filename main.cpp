@@ -31,6 +31,11 @@ int main(){
     Cliente c3(n3, 01.50, 2, "Esto es una diminuta prueba");
     cout << c3 << endl << endl;
 
+    Nombre n4("Kevin", "Herniudo");
+    cout << n4 << endl << endl;
+    Cliente c4(n4, 01.50, 1, "Esto es una diminuta prueba");
+    cout << c4 << endl << endl;
+
     cout << "Usar operadores sobrecargados" << endl << endl;
     if(c1 == c2){
         cout << "Cliente 1 es igual Cliente 2" << endl << endl;
@@ -46,6 +51,10 @@ int main(){
 
     if(c3 == c2){
         cout << "Cliente 3 es igual que Cliente 2" << endl << endl;
+    }
+
+    if(c4 == c1){
+        cout << "Cliente 4 es igual a Cliente 1" << endl << endl;
     }
 
     /*

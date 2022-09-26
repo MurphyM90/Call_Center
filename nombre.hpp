@@ -21,12 +21,10 @@ class Nombre{
 
         string toString();
 
-        Nombre& operator = (const Nombre& _nombre){
-            nombre = _nombre.nombre;
-            apellido = _nombre.apellido;
-            // deberia estar un return
-            // https://www.youtube.com/watch?v=p9DDn5FSOoY      Sobrecarga del operador= en C++
-        }
+        // deberia estar un return
+        // https://www.youtube.com/watch?v=p9DDn5FSOoY      Sobrecarga del operador= en C++
+        
+        Nombre& operator = (const Nombre& _nombre);
 
         bool operator == (const Nombre&) const; //== de comparacion
         bool operator != (const Nombre&) const;
@@ -40,11 +38,17 @@ class Nombre{
 
 };
 
+Nombre& Nombre::operator = (const Nombre& _nombre){
+    nombre = _nombre.nombre;
+    apellido = _nombre.apellido;
+}
+
 ostream& operator << (ostream& os, const Nombre& _nombre){
     os << "Nombre: " << _nombre.nombre << std::endl;
     os << "Apellido: " << _nombre.apellido << std::endl;
     return os;
 }
+
 /*
 Nombre::Nombre operator = (const Nombre& _nombre){
     nombre = _nombre.nombre;
