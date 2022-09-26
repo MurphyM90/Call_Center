@@ -18,19 +18,37 @@ int main(){
     cout<<"prueba git\n";
     Nombre n1("Diego", "Ramos");
     cout << n1 << endl << endl;
-    Cliente c1(n1, 01.50, 123456789, "Esto es una diminuta prueba");
+    Cliente c1(n1, 01.50, 1, "Esto es una diminuta prueba");
     cout << c1 << endl << endl;
 
     Nombre n2("Michael", "Edgar");
     cout << n2 << endl << endl;
-    Cliente c2(n2, 02.70, 987654321, "This is an example");
+    Cliente c2(n2, 02.70, 2, "This is an example");
     cout << c2 << endl << endl;
 
     Nombre n3("Paul", "GOD");
     cout << n3 << endl << endl;
-    Cliente c3(n3, 01.50, 123456789, "Esto es una diminuta prueba");
+    Cliente c3(n3, 01.50, 2, "Esto es una diminuta prueba");
     cout << c3 << endl << endl;
 
+    cout << "Usar operadores sobrecargados" << endl << endl;
+    if(c1 == c2){
+        cout << "Cliente 1 es igual Cliente 2" << endl << endl;
+    }
+
+    if(c2 != c1){
+        cout << "Cliente 2 es distinto que Cliente 1" << endl << endl;
+    }
+
+    if(c2 != c3){
+        cout << "Cliente 2 es distinto que Cliente 3" << endl << endl;
+    }
+
+    if(c3 == c2){
+        cout << "Cliente 3 es igual que Cliente 2" << endl << endl;
+    }
+
+    /*
     cout << "Agregar a las listas" << endl << endl;
 
     ListaDoblementeLigada<Cliente> listaCliente;
@@ -60,6 +78,8 @@ int main(){
     else{
         cout << "La lista NO esta vacia" << endl << endl;
     }
+
+    */
     system("pause");
     return 0;
 }

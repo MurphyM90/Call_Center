@@ -31,16 +31,52 @@ class Cliente{
             motivo = _cliente.motivo;
         }
 
-        bool operator == (const Cliente&) const; //== de comparacion
-        bool operator != (const Cliente&) const;
-        bool operator < (const Cliente&) const;
-        bool operator <= (const Cliente&) const;
-        bool operator > (const Cliente&) const;
-        bool operator >= (const Cliente&) const;
+        friend bool operator < (const Cliente& a, const Cliente& b){
+            if(a.cC < b.cC)
+                return true;
+            else
+                return false;
+        }
+
+        friend bool operator > (const Cliente& a, const Cliente& b){
+            if(a.cC > b.cC)
+                return true;
+            else
+                return false;
+        }
+
+        friend bool operator <= (const Cliente& a, const Cliente& b){
+            if(a.cC <= b.cC)
+                return true;
+            else
+                return false;
+        }
+
+        friend bool operator >= (const Cliente& a, const Cliente& b){
+            if(a.cC >= b.cC)
+                return true;
+            else
+                return false;
+        }
+
+        friend bool operator == (const Cliente& a, const Cliente& b){
+            if(a.cC == b.cC)
+                return true;
+            else
+                return false;
+        }
+
+        friend bool operator != (const Cliente& a, const Cliente& b){
+            if(a.cC != b.cC)
+                return true;
+            else
+                return false;
+        }
 
         friend ostream& operator<<(ostream& os, const Cliente& _cliente);
         friend istream& operator>>(istream& is, const Cliente& _cliente);
 };
+
 
 ostream& operator<<(ostream& os, const Cliente& _cliente){
     os << _cliente.nombre;
