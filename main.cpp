@@ -13,6 +13,86 @@ using namespace std;
 
 #include "ListaDoblementeLigada.cpp"
 
+/*
+bool menuPrincipal();
+//void menuCRUD(int, ListaDoblementeLigada<Cliente> &, ListaDoblementeLigada<Agente> &);
+
+
+*/
+
+bool menuPrincipal();
+void menuCRUD(int, ListaDoblementeLigada<Cliente> &);
+
+int main(){
+    ListaDoblementeLigada<Cliente> listaCliente;
+
+    bool mainFlag = true;
+    while(mainFlag == true){
+        if(mainFlag == false)
+            break;
+        else{
+            cout << "Aloja" << endl;
+            mainFlag = false;
+            mainFlag = menuPrincipal();
+        }
+    }
+    cout << "Saliendo del programa Call Center." << endl << endl;
+    system("pause");
+    return 0;
+}
+
+void menuCRUD(int opc, ListaDoblementeLigada<Cliente> &listaCliente){
+    bool flagCRUD = true;
+    cout << "Aloja" << endl << endl;
+    system("pause");
+}
+
+
+bool menuPrincipal(){
+    int opc = 0;
+    bool flagOptions = true;
+
+    ListaDoblementeLigada<Cliente> listaClientes;
+    //ListaDoblementeLigada<Agente> listaAgentes;
+
+    while(flagOptions == true){
+        system("cls");
+        cout << "Bienvenidos al programa Call Center, favor de seleccionar con que apartado quiere trabajar" << endl << endl;
+        cout << "1. Clientes" << endl;
+        cout << "2. Agentes" << endl;
+        cout << "3. Salir" << endl;
+        cout << "Seleccionar de manera numerica su opcion: ";
+        
+        cin >> opc;
+
+        if(opc == 1){
+            //menuCRUD(1, listaClientes, listaAgentes);
+            menuCRUD(opc, listaClientes);
+        }
+
+        else if(opc == 2){
+            //menuCRUD(2, listaClientes, listaAgentes);
+            menuCRUD(opc, listaClientes);
+        }
+
+        else if(opc == 3){
+            flagOptions = false;
+            return false;
+        }
+        
+        else{
+            cout << "Favor de seleccionar otra opcion" << endl << endl;
+            system("pause");
+        }
+    }
+}
+
+
+//void menuCRUD(int opc, ListaDoblementeLigada<Cliente> &listaClientes, ListaDoblementeLigada<Agente> &listaAgentes){
+
+
+
+/*
 int main(){
     //Cliente c1();
     cout<<"prueba git\n";
@@ -72,7 +152,16 @@ int main(){
         cout << "Cliente 4 es igual a Cliente 1" << endl << endl;
     }
 
-    /*
+    
+    system("pause");
+    return 0;
+}
+
+*/
+
+/*
+int main(){
+
     cout << "Agregar a las listas" << endl << endl;
 
     ListaDoblementeLigada<Cliente> listaCliente;
@@ -103,10 +192,10 @@ int main(){
         cout << "La lista NO esta vacia" << endl << endl;
     }
 
-    */
     system("pause");
     return 0;
 }
+*/
 
 
 /*
