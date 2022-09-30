@@ -23,28 +23,24 @@ bool menuPrincipal();
 bool menuPrincipal();
 void menuCRUD(int, ListaDoblementeLigada<Cliente> &);
 
-int main(){
-    ListaDoblementeLigada<Cliente> listaCliente;
+// Metodos de Cliente
+void crearCliente(ListaDoblementeLigada<Cliente> &listaClientes);
+Cliente &obtenerCliente(int id, Cliente, ListaDoblementeLigada<Cliente> &listaClientes);
+void mostrarClientes(ListaDoblementeLigada<Cliente> &);
 
+// Metodos de Agente
+
+int main(){
     bool mainFlag = true;
     while(mainFlag == true){
         if(mainFlag == false)
             break;
-        else{
-            cout << "Aloja" << endl;
-            mainFlag = false;
+        else
             mainFlag = menuPrincipal();
-        }
     }
     cout << "Saliendo del programa Call Center." << endl << endl;
     system("pause");
     return 0;
-}
-
-void menuCRUD(int opc, ListaDoblementeLigada<Cliente> &listaCliente){
-    bool flagCRUD = true;
-    cout << "Aloja" << endl << endl;
-    system("pause");
 }
 
 
@@ -86,6 +82,195 @@ bool menuPrincipal(){
         }
     }
 }
+
+void menuCRUD(int opcMenu, ListaDoblementeLigada<Cliente> &listaClientes){
+    int opcCRUD = 0;
+    bool flagCRUD = true;
+    while(flagCRUD == true){
+        
+        if(flagCRUD == false)
+            break;
+        
+        system("cls");
+        if(opcMenu == 1)
+            cout << "Menu Cliente - Estas son las opciones que puede realizar con el menu" << endl << endl;
+        else if(opcMenu == 2)
+            cout << "Menu Agente - Estas son las opciones que puede realizar con el menu" << endl << endl;
+        cout << "1. Crear" << endl;
+        cout << "2. Mostrar" << endl;
+        cout << "3. Mostrar todos" << endl;
+        cout << "4. Modificar" << endl;
+        cout << "5. Eliminar" << endl;
+        cout << "6. Salir" << endl;
+        cout << "Seleccionar de manera numerica su opcion: ";
+        
+        cin >> opcCRUD;
+
+        if(opcCRUD == 1){
+            if(opcMenu == 1){
+                Cliente cAux;                               // Creamos un auxiliar de cliente
+                crearCliente(listaClientes);                // Pondremos el crear cliente y lo agregamos a la lista cliente
+                system("pause");
+            }
+            else if(opcMenu == 2){
+                // Creamos un auxiliar de AGENTE
+                // Pondremos el crear AGENTE
+                // Lo agregamos a la lista AGENTE
+            }
+        }
+
+        else if(opcCRUD == 2){
+            if(opcMenu == 1){
+                if(listaClientes.isEmpty() == true){
+                    cout << endl << "La lista esta vacia, por favor, agregue un elemento" << endl;
+                    system("pause");
+                }
+                else{
+                    //  Mostrar Cliente
+                    int id = 0;
+                    Cliente cAux;
+                    cout << "Mostrar Cliente por su ID" << endl << endl;
+                    cout << "Escriba el ID del cliente que desea buscar: ";
+                    cin >> id;
+                    cAux = obtenerCliente(id, cAux, listaClientes);
+                    cout << "El cliente es el siguiente: " << endl << endl;
+                    cout << cAux << endl;
+                    system("pause");
+                }
+            }
+
+            else if(opcMenu == 2){
+                /*
+                if(listaClientes.isEmpty() == true){
+                    cout << "La lista esta vacia, por favor, agregue un elemento" << endl;
+                    system("pause");
+                }
+                else{
+                    //  Mostrar Agente
+                }
+                */
+            }
+        }
+
+        else if(opcCRUD == 3){
+            if(opcMenu == 1){
+                if(listaClientes.isEmpty() == true){
+                    cout << endl << "La lista esta vacia, por favor, agregue un elemento" << endl;
+                    system("pause");
+                }
+                else{
+                    //  Mostrar Clientes
+                    mostrarClientes(listaClientes);
+                    system("pause");
+                }
+            }
+
+            else if(opcMenu == 2){
+                /*
+                if(listaClientes.isEmpty() == true){
+                    cout << "La lista esta vacia, por favor, agregue un elemento" << endl;
+                    system("pause");
+                }
+                else{
+                    //  Mostrar Agente
+                }
+                */
+            }
+        }
+
+        else if(opcCRUD == 4){
+            if(opcMenu == 1){
+                if(listaClientes.isEmpty() == true){
+                    cout << endl << "La lista esta vacia, por favor, agregue un elemento" << endl;
+                    system("pause");
+                }
+                else{
+                    
+                    system("pause");
+                }
+            }
+
+            else if(opcMenu == 2){
+                /*
+                if(listaClientes.isEmpty() == true){
+                    
+                    system("pause");
+                }
+                else{
+                    
+                    system("pause");
+                }
+                */
+            }
+        }
+
+        else if(opcCRUD == 5){
+            if(opcMenu == 1){
+                if(listaClientes.isEmpty() == true){
+                    cout << endl <<"La lista esta vacia, por favor, agregue un elemento" << endl;
+                    system("pause");
+                }
+                else{
+                    
+                    system("pause");
+                }
+            }
+
+            else if(opcMenu == 2){
+                /*
+                if(listaClientes.isEmpty() == true){
+                    
+                    system("pause");
+                }
+                else{
+                    
+                    system("pause");
+                }
+                */
+            }
+        }
+
+        else if(opcCRUD == 6){
+            flagCRUD = false;
+        }
+        
+        else{
+            cout << "Favor de seleccionar otra opcion" << endl << endl;
+            system("pause");
+        }
+    }
+    cout << "Saliendo del menu CRUD (Create, Read, Update, Delete)." << endl << endl;
+    system("pause");
+}
+
+
+void crearCliente(ListaDoblementeLigada<Cliente> &listaClientes){
+    cout << endl << endl << "Creacion de Cliente" << endl << endl;
+    Cliente cAux;
+    cin >> cAux;
+    cout << "La informacion que se agregara a la lista sera la siguiente:" << endl << endl;
+    cout << cAux;
+    listaClientes.ponAlFinal(cAux);
+    cout << endl;
+}
+
+Cliente &obtenerCliente(int id, Cliente cAux, ListaDoblementeLigada<Cliente> &listaClientes){ // FIX THIS, Position
+    listaClientes.irAPosicion(id);
+    cAux = listaClientes.obtenerElemento();
+    return cAux;
+}
+
+void mostrarClientes(ListaDoblementeLigada<Cliente> &listaClientes){
+    int tamanio = listaClientes.obtenerTamanio() + 1;
+    cout << endl << endl << "Mostrar todos los clientes" << endl << endl;
+    for(int i = 1; i < tamanio; i++){
+        Cliente cAux;
+        cAux = obtenerCliente(i, cAux, listaClientes);
+        cout << cAux << endl;
+    }
+    cout << endl;
+}
+
 
 
 //void menuCRUD(int opc, ListaDoblementeLigada<Cliente> &listaClientes, ListaDoblementeLigada<Agente> &listaAgentes){
