@@ -25,11 +25,13 @@ void menuCRUD(int, ListaDoblementeLigada<Cliente> &);
 
 // Metodos de Cliente
 void crearCliente(ListaDoblementeLigada<Cliente> &listaClientes);
-Cliente &obtenerCliente(int id, Cliente, ListaDoblementeLigada<Cliente> &listaClientes);
+// Cliente &obtenerCliente(int id, Cliente, ListaDoblementeLigada<Cliente> &listaClientes); // --------------------------------------------------------------------------------------
+
 void mostrarClientes(ListaDoblementeLigada<Cliente> &);
 
 // Metodos de Agente
 
+/*
 int main(){
     bool mainFlag = true;
     while(mainFlag == true){
@@ -42,6 +44,50 @@ int main(){
     system("pause");
     return 0;
 }
+*/
+
+/*
+int foo();
+
+int main(){
+    int a;
+    a = foo();
+    cout << a << endl;
+    system("pause");
+    return 0;
+}
+
+int foo(){
+    int b = 99;
+    return b;
+}
+*/
+
+
+Cliente &obtenerCliente(int id, ListaDoblementeLigada<Cliente> &listaClientes){
+    Cliente *cAux;
+    listaClientes.irAPosicion(id);    //  Para obtener el primer elemento de la lista con el ir a posicion, debe ser 0, como un array vaya
+    cAux = listaClientes.obtenerElemento();
+    cout << cAux;
+    cout << endl;
+    return cAux;
+}
+
+int main(){
+    ListaDoblementeLigada<Cliente> listaClientes;
+    Nombre n1("Diego", "Ramos");
+    Cliente c1(n1, 01.50, 1, "Esto es una diminuta prueba");
+    listaClientes.ponAlFinal(c1);
+    Cliente cliAux;
+    cout << endl;
+    cliAux = obtenerCliente(0, listaClientes);
+    cout << cliAux << endl;
+    cout << endl;
+    system("pause");
+    return 0;
+}
+
+
 
 
 bool menuPrincipal(){
@@ -132,7 +178,7 @@ void menuCRUD(int opcMenu, ListaDoblementeLigada<Cliente> &listaClientes){
                     cout << "Mostrar Cliente por su ID" << endl << endl;
                     cout << "Escriba el ID del cliente que desea buscar: ";
                     cin >> id;
-                    cAux = obtenerCliente(id, cAux, listaClientes);
+                    // cAux = obtenerCliente(id, cAux, listaClientes); -------------------------------------------------------------------------------------------------------------
                     cout << "El cliente es el siguiente: " << endl << endl;
                     cout << cAux << endl;
                     system("pause");
@@ -254,22 +300,27 @@ void crearCliente(ListaDoblementeLigada<Cliente> &listaClientes){
     cout << endl;
 }
 
-Cliente &obtenerCliente(int id, Cliente cAux, ListaDoblementeLigada<Cliente> &listaClientes){ // FIX THIS, Position
+/*
+Cliente &obtenerCliente(int id, Cliente cAux, ListaDoblementeLigada<Cliente> &listaClientes){ // --------------------------------------------------------------------------- FIX THIS, Position
     listaClientes.irAPosicion(id);
     cAux = listaClientes.obtenerElemento();
     return cAux;
 }
+*/
+
+
 
 void mostrarClientes(ListaDoblementeLigada<Cliente> &listaClientes){
     int tamanio = listaClientes.obtenerTamanio() + 1;
     cout << endl << endl << "Mostrar todos los clientes" << endl << endl;
     for(int i = 1; i < tamanio; i++){
         Cliente cAux;
-        cAux = obtenerCliente(i, cAux, listaClientes);
+        //cAux = obtenerCliente(i, cAux, listaClientes);
         cout << cAux << endl;
     }
     cout << endl;
 }
+
 
 
 

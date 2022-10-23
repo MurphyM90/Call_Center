@@ -24,7 +24,7 @@ class Nombre{
         // deberia estar un return
         // https://www.youtube.com/watch?v=p9DDn5FSOoY      Sobrecarga del operador= en C++
         
-        Nombre& operator = (const Nombre& _nombre);
+        void operator = (Nombre);
 
         bool operator == (const Nombre&) const; //== de comparacion
         bool operator != (const Nombre&) const;
@@ -39,9 +39,9 @@ class Nombre{
 
 };
 
-Nombre& Nombre::operator = (const Nombre& _nombre){
-    nombre = _nombre.nombre;
-    apellido = _nombre.apellido;
+void Nombre::operator = (Nombre nombreParam){
+    this->nombre = nombreParam.getNombre();
+    this->apellido = nombreParam.getApellido();
 }
 
 ostream& operator << (ostream& os, const Nombre& _nombre){

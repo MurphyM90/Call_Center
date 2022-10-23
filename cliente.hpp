@@ -18,13 +18,15 @@ class Cliente{
         void setdLL(float _dLL);
         void setcC(long int _cC);
         void setMotivo(string _motivo);
-        Nombre getnombre();
+        Nombre getNombre();
         float getdLL();
         long int getcC();
-        string getmotivo();
+        string getMotivo();
         string toString();
 
-        Cliente& operator = (const Cliente& _cliente);
+        //Cliente& operator = (const Cliente& _cliente);
+        void operator = (Cliente);
+
         friend bool operator < (const Cliente& a, const Cliente& b);
         friend bool operator > (const Cliente& a, const Cliente& b);
 
@@ -38,7 +40,40 @@ class Cliente{
         friend istream & operator>>(istream& is, Cliente& _cliente);
 };
 
+void Cliente::operator=(Cliente clienteParam)
+{
+    this->nombre = clienteParam.getNombre();
+    this->dLL = clienteParam.getdLL();
+    this->cC = clienteParam.getcC();
+    this->motivo = clienteParam.getMotivo();
+}
 
+bool operator < (const Cliente& a, const Cliente& b){
+    return a.cC < b.cC;
+}
+bool operator > (const Cliente& a, const Cliente& b){
+    return a.cC > b.cC;
+}
+bool operator <= (const Cliente& a, const Cliente& b){
+    return a.cC <= b.cC;
+}
+bool operator >= (const Cliente& a, const Cliente& b){
+    return a.cC >= b.cC;
+}
+bool operator == (const Cliente& a, const Cliente& b){
+    return a.cC == b.cC;
+}
+bool operator != (const Cliente& a, const Cliente& b){
+    return a.cC != b.cC;
+}
+
+ostream& operator<<(ostream& os, const Cliente& _cliente){
+    os << _cliente.nombre;
+    os << "Duracion de llamada: " << _cliente.dLL << std::endl;
+    os << "Codigo de cliente: " << _cliente.cC << std::endl;
+    os << "Motivo: " << _cliente.motivo << std::endl;
+    return os;
+}
 istream& operator>>(istream& is, Cliente& _cliente){
     is >> _cliente.nombre;
     cout << "Duracion de llamada: ";
@@ -48,66 +83,6 @@ istream& operator>>(istream& is, Cliente& _cliente){
     cout << "Motivo: ";
     is >> _cliente.motivo;
     return is;
-}
-
-
-Cliente& Cliente :: operator = (const Cliente& _cliente){
-    nombre = _cliente.nombre;
-    dLL = _cliente.dLL;         //duracion llamada
-    cC = _cliente.cC;           //Codigo de cliente
-    motivo = _cliente.motivo;
-}
-
-bool operator < (const Cliente& a, const Cliente& b)
-{
-    if(a.cC < b.cC)
-        return true;
-    else
-        return false;
-}
-
-bool operator > (const Cliente& a, const Cliente& b){
-    if(a.cC > b.cC)
-        return true;
-    else
-        return false;
-}
-
-bool operator <= (const Cliente& a, const Cliente& b){
-    if(a.cC <= b.cC)
-        return true;
-    else
-        return false;
-}
-
-bool operator >= (const Cliente& a, const Cliente& b){
-    if(a.cC >= b.cC)
-        return true;
-    else
-        return false;
-}
-
-
-bool operator == (const Cliente& a, const Cliente& b){
-    if(a.cC == b.cC)
-        return true;
-    else
-        return false;
-}
-
-bool operator != (const Cliente& a, const Cliente& b){
-    if(a.cC != b.cC)
-        return true;
-    else
-        return false;
-}
-
-ostream& operator<<(ostream& os, const Cliente& _cliente){
-    os << _cliente.nombre;
-    os << "Duracion de llamada: " << _cliente.dLL << std::endl;
-    os << "Codigo de cliente: " << _cliente.cC << std::endl;
-    os << "Motivo: " << _cliente.motivo << std::endl;
-    return os;
 }
 
 
@@ -139,7 +114,7 @@ void Cliente::setcC(long int _cC){
 void Cliente::setMotivo(string _motivo){
     motivo = _motivo;
 }
-Nombre Cliente::getnombre(){
+Nombre Cliente::getNombre(){
     return nombre;
 }
 float Cliente::getdLL(){
@@ -148,7 +123,7 @@ float Cliente::getdLL(){
 long int Cliente::getcC(){
     return cC;
 }
-string Cliente::getmotivo(){
+string Cliente::getMotivo(){
     return motivo;
 }
 string Cliente::toString(){
